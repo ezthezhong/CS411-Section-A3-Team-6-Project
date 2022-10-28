@@ -1,1 +1,10 @@
-
+On the main menu screen, the user will select the field signifying that he wants to play the Spotify gamemode.
+Then, they will be shown a popup and be prompted to select between two fields: regular or easy mode. In regular
+mode, the player will be given two randomly selected songs from a verified artist on Spotify and will have to guess
+which one has more total streams. They have unlimited time to make a guess in a round. When the player gets a correct
+answer, their score will increase by one. The correctly answered song will then be compared to another randomly selected
+song, and the game keeps going. When the user gives an incorrect answer, their game ends and the score is recorded and
+shown to them in a popup. Then they can decide to play another round or go back to the main menu. In easy mode, the player
+is allowed three incorrect guesses before the game ends. Incorrect guesses do not increment the score by one but another
+round starts after, similar to regular mode. High scores can be recorded for future play sessions by logging in. More
+information can be found in the Logged-in user and Not logged-in user stories. There is a separate leaderboard for regular and easy mode.
