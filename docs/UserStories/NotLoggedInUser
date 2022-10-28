@@ -1,1 +1,8 @@
-
+Someone who wants to play the game without logging in to their Twitter account. On the main menu screen, they
+will not select the field asking them to log in to their Twitter account. Rather, they just want to play the game
+regardless of whether they want to record their scores or not. The user will just click on one of two options: the
+Twitter or the Spotify gamemodes. Throughout their play session, information such as high score, average score and total
+number of games played will not be recorded as they are not logged in. However, they will be able to see a temporary high
+score displayed in the bottom left corner of the screen. This score will go away after the user closes the game application,
+but they will have the option to save the high score by logging in. They will have the option to log in if after each game is
+played prompted by a popup. More information can be found in the Logged-in user story.
