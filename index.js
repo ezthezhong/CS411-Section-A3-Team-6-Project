@@ -19,7 +19,7 @@ const requestOptions = {
   headers: myHeaders
 };
 
-const things = fetch("fhttps://api.apilayer.com/spotify/track_lyrics?id=02Zkkf2zMkwRGQjZ7T4p8f?si=d630212ac8e74fb5", requestOptions)
+const things = fetch("https://api.apilayer.com/spotify/track_lyrics?id=02Zkkf2zMkwRGQjZ7T4p8f?si=d630212ac8e74fb5", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
