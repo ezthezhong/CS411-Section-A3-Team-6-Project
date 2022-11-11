@@ -3,35 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Today's Date</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="/results.js" defer></script>
+    <title>Sigh</title>
   </head>
   <body>
-    <form action="results.html" method="get">
-      <div>
-        <label for="Artist"> Give an Artist </label
-        ><input type="text" name="name" />
-      </div>
-      <div>
-        <button type="submit">Click</button>
-      </div>
-
-      <div id="demo">
-        <h2>Press the button to get a song</h2>
-        <button type="button" onclick="loadDoc()">Get A Song</button>
-      </div>
-      <script>
-        function loadDoc() {
-          const xhttp = new XMLHttpRequest();
-          xhttp.onload = function() {
-            document.getElementById("demo").innerHTML =
-            this.responseText;
-          }
-          xhttp.open("GET", "resultText.txt");
-          xhttp.send();
-        }
-        </script>
-    </form>
+    <script>
+      fetch("http://localhost:3000/results")
+        .then((response) => console.log(response.data))
+        .catch((error) => console.log("error", error));
+    </script>
   </body>
 </html>

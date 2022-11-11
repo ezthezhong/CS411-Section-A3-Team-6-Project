@@ -1,16 +1,16 @@
 const express = require('express');
+const cors = require('cors');
+const { response } = require('express');
 const app = express();
 
-const SpotifyAPI = () => {
-    const [search, setSearch] = useState(null)
-
-}
+app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
+  res.send('Hello World');
 });
 
-const myHeaders = new Headers();
+app.get('/results', (req, res) => {
+  const myHeaders = new Headers();
 myHeaders.append("apikey", "hq1hN3hByEK42nstZPzie1JF1gL4OOij");
 
 const requestOptions = {
@@ -19,14 +19,16 @@ const requestOptions = {
   headers: myHeaders
 };
 
-const things = fetch("https://api.apilayer.com/spotify/track_lyrics?id=02Zkkf2zMkwRGQjZ7T4p8f?si=d630212ac8e74fb5", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+fetch("https://api.apilayer.com/spotify/track_lyrics?id=02Zkkf2zMkwRGQjZ7T4p8f%3Fsi%3D2701965f68674b77", requestOptions)
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("NETWORK RESPONSE ERROR");
+    }
+  })
+  .then(data => console.log)
 
+});
 
-
-
-const port = process.env.port || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`))
-
+app.listen(3000, () => console.log('Listening on port 3000...'));
