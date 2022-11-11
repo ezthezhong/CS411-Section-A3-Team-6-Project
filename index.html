@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Today's Date</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="/results.js" defer></script>
   </head>
   <body>
     <form action="results.html" method="get">
@@ -15,6 +16,22 @@
       <div>
         <button type="submit">Click</button>
       </div>
+
+      <div id="demo">
+        <h2>Press the button to get a song</h2>
+        <button type="button" onclick="loadDoc()">Get A Song</button>
+      </div>
+      <script>
+        function loadDoc() {
+          const xhttp = new XMLHttpRequest();
+          xhttp.onload = function() {
+            document.getElementById("demo").innerHTML =
+            this.responseText;
+          }
+          xhttp.open("GET", "resultText.txt");
+          xhttp.send();
+        }
+        </script>
     </form>
   </body>
 </html>
