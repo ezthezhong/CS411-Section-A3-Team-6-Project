@@ -1,32 +1,43 @@
-const express = require('express');
-const app = express();
+var myHeaders = new Headers();
+myHeaders.append("apikey", "psQ2KPy3GVewXkg0NsOQ8EYuEs7BdPox");
 
-const SpotifyAPI = () => {
-    const [search, setSearch] = useState(null)
-
-}
-
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
-
-const myHeaders = new Headers();
-myHeaders.append("apikey", "hq1hN3hByEK42nstZPzie1JF1gL4OOij");
-
-const requestOptions = {
+var requestOptions = {
   method: 'GET',
   redirect: 'follow',
   headers: myHeaders
 };
 
-const things = fetch("https://api.apilayer.com/spotify/track_lyrics?id=02Zkkf2zMkwRGQjZ7T4p8f?si=d630212ac8e74fb5", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+const api_url = "https://api.apilayer.com/spotify/artists?ids=3oSJ7TBVCWMDMiYjXNiCKE"
 
 
 
-
-const port = process.env.port || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`))
-
+async function getapi(url) {
+    
+    // Storing response
+    const response = await fetch(url, requestOptions);
+    
+    // Storing data in form of JSON
+    var data = await response.json();
+    console.log(data);
+    
+    show(data);
+}
+getapi(api_url);
+// Function to define innerHTML for HTML table
+function show(data) {
+    let tab = 
+    `<tr>
+          <th>Name</th>
+          <th>Followers</th>
+          <th>Popularity</th>
+          <th>Type</th>
+         </tr>`;
+         tab += `<tr> 
+         <td>${data.artists[0].name} </td>
+         <td>${data.artists[0].followers.total}</td>
+         <td>${data.artists[0].popularity}</td> 
+         <td>${data.artists[0].type}</td>          
+     </tr>`;
+    // Setting innerHTML as tab variable
+    document.getElementById("name").innerHTML = tab;
+}
