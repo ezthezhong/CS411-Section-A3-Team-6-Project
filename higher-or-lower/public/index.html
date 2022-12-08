@@ -9,7 +9,7 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="stylesheet" href="style.css" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -27,15 +27,34 @@
     <title>React App</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div>
-      <h2>Press the Button</h2>
-      <button onClick="startGame()">Get an Artist</button>
-    </div>
-
-    <p id="option2"></p>
-    <p id="option1"></p>
+      <center>
+        <h1 id="lol">Can we get much higher?</h1>
+        <button class="start" id="start"> START </button>
+      </center>
+    <div>
+      <div>
+        <center>
+          <div>
+            <button class="play" ></button>
+            <button class="play" ></button>
+          </div>
+          <div class="parent">
+            <div class="sub">
+              <p class="left" id="option1">Artist</p>
+            </div>
+            <div class="sub">
+              <p class="right" id="option2">Artist</p>
+            </div>
+          </div>
+        </center>
+      </div>
+      <br />
+      <div>
+        <p class="score">score:</p>
+      </div>
+       
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -48,3 +67,4 @@
     -->
   </body>
 </html>
+
