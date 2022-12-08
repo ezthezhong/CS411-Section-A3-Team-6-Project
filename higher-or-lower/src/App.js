@@ -92,26 +92,19 @@ function App() {
       <td>${data.artists.items[i].popularity}</td> 
       <td>${data.artists.items[i].type}</td>
       </tr>`;
+      // const six = tab[0];
     }
-    document.getElementById("option1").innerHTML = tab[0];
-    document.getElementById("option2").innerHTML = tab[1];
+    const six = document.getElementById("option1").innerHTML = tab[0];
+    const seven = document.getElementById("option2").innerHTML = tab[1];
   }
-
-  function startGame(){
+  function startGame() {
     const api_call = "https://v1.nocodeapi.com/kiryn/spotify/puFGJfMsgiBixtEE/search?q=" + generateRandomSearch() + "&type=artist&perPage=2";
-    getapi(api_call);
+    document.getElementById("option2").innerHTML = (getapi(api_call));
+    document.getElementById("option1").innerHTML = (getapi(api_call));
   }
 
-  return (
-    <>
-    <div>
-      <h2>Press the Button to start the Game</h2>
-      <button type="button" onClick="startGame()">Get an Artist</button>
-    </div>
-    <table></table>
-    <table id="option1"></table>
-    <table id="option2"></table>
-    </>
+  return ( 
+    startGame()
   )
 }
 
