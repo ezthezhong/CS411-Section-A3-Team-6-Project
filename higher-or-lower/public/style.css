@@ -4,7 +4,7 @@ body {
 }
 h1 {
   color: blue;
-  border: 2px solid red;
+  border: 2px solid rgb(81, 0, 255);
   padding: 30px;
   margin: 50px;
 }
@@ -17,7 +17,7 @@ h1 {
 }
 
 .start {
-  background-image: red;
+  background-image: rgb(81, 0, 255);
 }
 
 .parent {
@@ -32,16 +32,18 @@ h1 {
 }
 
 .left {
-  background-color:red;
-  margin-left: 50%;
-  width: 35%;
+  background-color:rgb(255, 255, 255);
+  margin-left: 38%;
+  width: 25%;
   height: 50px;
+  object-position: left center;
 }
 .right{
-  background-color: red;
-  margin-right: 50%;
-  width: 35%;
+  background-color: rgb(255, 255, 255);
+  margin-left: 38%;
+  width: 25%;
   height: 50px;
+  object-position: right center;
 }
 
 .score {
