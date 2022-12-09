@@ -87,9 +87,11 @@ async function getapiSingleRight(url) {
 
 
 
-
-
+var url1;
+var url2;
   function show(data) {
+    url1 = data.artists.items[0].images[0].url;
+    url2 = data.artists.items[1].images[0].url;
     const tab = [];
     for (let i = 0; i< 2; i++) {
       tab[i] = 
@@ -107,7 +109,6 @@ async function getapiSingleRight(url) {
     const six = document.getElementById("option1").innerHTML = tab[0];
     const seven = document.getElementById("option2").innerHTML = tab[1];
   }
-
   function showSingleLeft(data) {
     const tab = [];
       tab[0] = 
@@ -164,6 +165,11 @@ async function getapiSingleRight(url) {
       console.log(data);
       document.getElementById("option2").innerHTML = (getapiSingleLeft(api_call));
     }
+    else{
+      score=0;
+      document.getElementById("score").innerHTML = 0;
+      startGame();
+    }
   }
 
   function isRightCorrect(){
@@ -175,10 +181,13 @@ async function getapiSingleRight(url) {
         const api_call = "https://v1.nocodeapi.com/theifhawk/spotify/cnBRhVmxDYwbcgKY/search?q=" + generateRandomSearch() + "&type=artist&perPage=1";
         document.getElementById("option1").innerHTML = (getapiSingleRight(api_call));
       }
+      else{
+        score=0;
+        document.getElementById("score").innerHTML = 0;
+        startGame();
+      }
     
-  }
-
-      
+  } 
       </script>
 
 
@@ -194,6 +203,9 @@ async function getapiSingleRight(url) {
           <div class="parent">
             <div class="sub">
               <p class="left" id="option1">Artist</p>
+              <script type="text/javascript">
+                
+              </script>
               <button type= "button" id="leftCorrect" onclick="isLeftCorrect()"> More Followers </button>
             </div>
             <div class="sub">
@@ -207,17 +219,6 @@ async function getapiSingleRight(url) {
       <div>
         <p class="score" id = "score" >score:</p>
       </div>
-       
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
 
