@@ -92,6 +92,8 @@ var url2;
   function show(data) {
     url1 = data.artists.items[0].images[0].url;
     url2 = data.artists.items[1].images[0].url;
+    document.querySelector(".id-of-img-tag").src = url1;
+    document.querySelector(".id-of-img-tag-2").src = url2;
     const tab = [];
     for (let i = 0; i< 2; i++) {
       tab[i] = 
@@ -203,15 +205,16 @@ var url2;
           <div class="parent">
             <div class="sub">
               <p class="left" id="option1">Artist</p>
-              <script type="text/javascript">
-                
-              </script>
+              <div>
+              </div>
               <button type= "button" id="leftCorrect" onclick="isLeftCorrect()"> More Followers </button>
             </div>
+            <img class="id-of-img-tag" src="" alt="img">
             <div class="sub">
               <p class="right" id="option2">Artist</p>
               <button type = "button" id="rightCorrect" onclick="isRightCorrect()"> More Followers </button>
             </div>
+            <img class="id-of-img-tag-2" src="" alt="img">
           </div>
         </center>
       </div>
