@@ -1,0 +1,5 @@
+While the user plays the game, their current score will be displayed. This allows the user
+to keep track of their progress in the game, as well as try to improve from previous
+plays of the game. The ability to keep track of the score keeps the user having fun
+as they play more iterations of the game since they can try to improve their score, and as
+a user I would want to know my progress.
