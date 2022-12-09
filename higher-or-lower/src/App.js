@@ -33,7 +33,7 @@ function App() {
 
   var followers = new Array();
 
-  const api_call = "https://v1.nocodeapi.com/kirynmissy/spotify/AwQbQHZlDSCGWmtd/search?q=" + generateRandomSearch() + "&type=artist&perPage=2";
+  
   var data;
   async function getapi(url) {
     
@@ -64,6 +64,7 @@ function App() {
     const seven = document.getElementById("option2").innerHTML = tab[1];
   }
   function startGame() {
+    const api_call = "https://v1.nocodeapi.com/kirynmissy/spotify/AwQbQHZlDSCGWmtd/search?q=" + generateRandomSearch() + "&type=artist&perPage=2";
     document.getElementById("option2").innerHTML = (getapi(api_call));
     document.getElementById("option1").innerHTML = (getapi(api_call));
   }
