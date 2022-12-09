@@ -23,50 +23,137 @@ function generateRandomSearch() {
     }
     return randomSearch;
   }
-
-
-const api_url = "https://api.apilayer.com/spotify/artists?ids=0YC192cP3KPCRWx8zr8MfZ"
-
-
-
-async function getapi(url) {
+  var followers = new Array();
+  var score = 0
+  var followersLeft = 0;
+  var followersRight = 0;
+  
+  var data;
+  async function getapi(url) {
     
     // Storing response
     const response = await fetch(url, requestOptions);
     
     // Storing data in form of JSON
-    var data = await response.json();
+    data = await response.json();
     console.log(data);
-    
+
     show(data);
 }
-
-function show(data){
-    const tab = [];
-    for(let i = 0; i<2; i++){
-        tab[i] = 
-    `<tr>
-          <th>Name</th>
-          <th>Followers</th>
-          <th>Popularity</th>
-          <th>Type</th>
-         </tr>`;
-         tab[i] += `<tr> 
-         <td>${data.artists.items[i].name} </td>
-         <td>${data.artists.items[i].followers.total}</td>
-         <td>${data.artists.items[i].popularity}</td> 
-         <td>${data.artists.items[i].type}</td>          
-     </tr>`;
-    }
-    Table1 = tab[0]
-    Table2 = tab[1]
-    document.getElementById("option1").innerHTML = Table1;
-    document.getElementById("option2").innerHTML = Table2;
-}
-
-//https://v1.nocodeapi.com/kiryn/spotify/puFGJfMsgiBixtEE/search?q=%r&type=artist&perPage=2
-function startGame(){
-    const api_call = "https://v1.nocodeapi.com/kiryn/spotify/puFGJfMsgiBixtEE/search?q=" + generateRandomSearch() + "&type=artist&perPage=2";
-    getapi(api_call);
+// getapi for a single one
+async function getapiSingleLeft(url) {
     
+    // Storing response
+    const response = await fetch(url, requestOptions);
+    
+    // Storing data in form of JSON
+    data = await response.json();
+    console.log(data);
+
+    showSingleLeft(data);
 }
+
+async function getapiSingleRight(url) {
+    
+    // Storing response
+    const response = await fetch(url, requestOptions);
+    
+    // Storing data in form of JSON
+    data = await response.json();
+    console.log(data);
+
+    showSingleRight(data);
+}
+
+
+
+
+
+  function show(data) {
+    const tab = [];
+    for (let i = 0; i< 2; i++) {
+      tab[i] = 
+      `<tr>
+      </tr>`;
+      tab[i] += `<tr>
+      <td>${data.artists.items[i].name} </td>
+      </tr>`;
+      // const six = tab[0];
+      
+      followers.push(data.artists.items[i].followers.total);
+    }
+    followersLeft = followers[0];
+    followersRight = followers[1];
+    const six = document.getElementById("option1").innerHTML = tab[0];
+    const seven = document.getElementById("option2").innerHTML = tab[1];
+  }
+
+  function showSingleLeft(data) {
+    const tab = [];
+      tab[0] = 
+      `<tr>
+      </tr>`;
+      tab[0] += `<tr>
+      <td>${data.artists.items[0].name} </td>
+      </tr>`;
+      // const six = tab[0];
+      
+      followersRight = data.artists.items[0].followers.total;
+      console.log(followersLeft);
+      console.log(followersRight);
+    const six = document.getElementById("option2").innerHTML = tab[0];
+    
+  }
+
+  function showSingleRight(data) {
+    const tab = [];
+      tab[0] = 
+      `<tr>
+      </tr>`;
+      tab[0] += `<tr>
+      <td>${data.artists.items[0].name} </td>
+      </tr>`;
+      // const six = tab[0];
+      
+      followersLeft = data.artists.items[0].followers.total;
+      console.log(followersLeft);
+      console.log(followersRight);
+    const seven = document.getElementById("option1").innerHTML = tab[0];
+  }
+
+
+  // https://v1.nocodeapi.com/dbuildster/spotify/cWNDcmiNimyBqRqw
+
+  function startGame() {
+    const api_call = "https://v1.nocodeapi.com/dbuildster/spotify/cWNDcmiNimyBqRqw/search?q=" + generateRandomSearch() + "&type=artist&perPage=2";
+    document.getElementById("option1").innerHTML = (getapi(api_call));
+    document.getElementById("option2").innerHTML = (getapi(api_call));
+    followersLeft = followers[0];
+    followersRight = followers[1];
+   
+  }
+
+  
+  function isLeftCorrect(){
+    
+    if(followersLeft > followersRight){
+        console.log(followersLeft);
+        console.log(followersRight);
+      document.getElementById("score").innerHTML = score+=1;
+      const api_call = "https://v1.nocodeapi.com/dbuildster/spotify/cWNDcmiNimyBqRqw/search?q=" + generateRandomSearch() + "&type=artist&perPage=1";
+      console.log(data);
+      document.getElementById("option2").innerHTML = (getapiSingleLeft(api_call));
+    }
+  }
+
+  function isRightCorrect(){
+    
+      if(followersRight > followersLeft){
+        console.log(followersLeft);
+      console.log(followersRight);
+        document.getElementById("score").innerHTML = score+=1;
+        const api_call = "https://v1.nocodeapi.com/dbuildster/spotify/cWNDcmiNimyBqRqw/search?q=" + generateRandomSearch() + "&type=artist&perPage=1";
+        document.getElementById("option1").innerHTML = (getapiSingleRight(api_call));
+      }
+    
+  }
