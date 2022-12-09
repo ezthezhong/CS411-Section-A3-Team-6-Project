@@ -1,4 +1,4 @@
- Someone can log in to their Twitter account if they want to record information on the games they play, such as a high score. 
+ Someone can log in to their Twitter account if they want to be logged in while they play the game. 
  Upon opening the game, the user will see a main menu with a field allowing them to log in. If they decide to do so, a popup
  will appear asking them for their Twitter username as well as their password. After filling in the correct information, the
  player will be brought back to the main menu where they can start the game.
