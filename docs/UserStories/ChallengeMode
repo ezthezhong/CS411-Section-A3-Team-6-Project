@@ -1,7 +1,0 @@
-This user has been playing either the Spotify or Twitter gamemodes in regular mode, (more information can be found in the
-I want to play the Twitter Gamemode or I want to play the Spotify Gamemode user stories). If they receive a score of at least
-15, then at the end of the game, a popup will appear telling the player they just unlocked Challenge Mode. This is similar to Regular
-Mode, but with a twist. The player only has one life, but now there is a time limit for each round. The user will only have 6 seconds
-to make a guess; when the timer reaches 0, the game ends. The participant can either play another game or go back to the main menu.
-Each time a player wants to play either the Spotify or Twitter gamemode, a new permanently unlocked field will appear next to Regular
-and Easy mode called Challenge Mode. There is a leaderboard for Challenge Mode. More information can be found in the Logged-in user and Not logged-in user stories.
