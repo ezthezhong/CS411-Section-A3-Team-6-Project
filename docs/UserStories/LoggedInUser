@@ -1,8 +1,4 @@
  Someone can log in to their Twitter account if they want to record information on the games they play, such as a high score. 
  Upon opening the game, the user will see a main menu with a field allowing them to log in. If they decide to do so, a popup
  will appear asking them for their Twitter username as well as their password. After filling in the correct information, the
- player will be brought back to the main menu where they can select which game mode they want to play. If the player does get
- a high score after any game from this session, they will be able to share the high score if they want by Tweeting it out. The
- score will also be saved to their account and will be able to view it in following logged-in play sessions. Users with associated
- Twitter accounts will also have access to their total number of games played and average score. Those who have an account can view
- their highscore on a leaderboard, filled with other players who have accounts. 
+ player will be brought back to the main menu where they can start the game.
