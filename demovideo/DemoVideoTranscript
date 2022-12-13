@@ -1,0 +1,9 @@
+I can't record any audio, so I am going to type out a transcript explanation of our two videos and explain what they are. 
+We have a React frontend, and a Node.JS and express backend. For our Twitter login component, we were able to implement
+it successfully, as shown in the Twitter demo. It uses the Twitter API, and uses a MongoDB to store user information.
+Unfortunately, when combined with the frontend app, the app itself no longer works. We recorded two separate videos
+for this reason, one of the Twitter login component and the other of our frontend app. The app, when opened, gives a start
+button which can be pressed to begin the game. The game will randomly generate two random Spotify artists using the API
+and display their picture. The user has to pick which one has more followers using the button of the same name. If they
+get the answer correct, their score goes up by one, and another random artist replaces the artist who lost the round.
+If they get it incorrect, their score goes back to 0 and the game restarts.
